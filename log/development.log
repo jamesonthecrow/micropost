@@ -1,0 +1,227 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (193.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (140.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100719221451)
+  [4;36;1mSQL (91.9ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100719221451')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100719221451)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (39.1ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-19 18:26:44) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 60ms (View: 14, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-19 18:26:59) [GET]
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-07-19 18:27:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Tqatr0Xor97ZVVZJBePRlGd3c7FFoILtPgkzdpYeTjk=", "user"=>{"name"=>"Bob Smith", "email"=>"jamesontoole@gmail.com"}}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (36.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `email`) VALUES('Bob Smith', '2010-07-19 22:27:09', '2010-07-19 22:27:09', 'jamesontoole@gmail.com')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed in 48ms (DB: 40) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-19 18:27:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 12ms (View: 4, DB: 5) | 200 OK [http://localhost/users/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-19 18:27:43) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 9ms (View: 4, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-07-19 18:27:44) [GET]
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-07-19 18:27:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Tqatr0Xor97ZVVZJBePRlGd3c7FFoILtPgkzdpYeTjk=", "user"=>{"name"=>"John Doe", "email"=>"jamesontoole@gmail.com"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (40.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`name`, `created_at`, `updated_at`, `email`) VALUES('John Doe', '2010-07-19 22:27:57', '2010-07-19 22:27:57', 'jamesontoole@gmail.com')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed in 51ms (DB: 44) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-19 18:27:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (4.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 63ms (View: 53, DB: 7) | 200 OK [http://localhost/users/2]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-19 18:27:59) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 10ms (View: 5, DB: 3) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100719221451)
+Migrating to CreateMicroposts (20100719223602)
+  [4;36;1mSQL (93.1ms)[0m   [0;1mCREATE TABLE `microposts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100719223602')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mdescribe `microposts`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW KEYS FROM `microposts`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#new (for 127.0.0.1 at 2010-07-19 18:37:43) [GET]
+  [4;35;1mMicropost Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
+Rendering template within layouts/microposts
+Rendering microposts/new
+Completed in 15ms (View: 10, DB: 2) | 200 OK [http://localhost/microposts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#create (for 127.0.0.1 at 2010-07-19 18:37:55) [POST]
+  Parameters: {"commit"=>"Create", "micropost"=>{"user_id"=>"1", "content"=>"This is a freakin' test."}, "authenticity_token"=>"Tqatr0Xor97ZVVZJBePRlGd3c7FFoILtPgkzdpYeTjk="}
+  [4;36;1mMicropost Columns (11.6ms)[0m   [0;1mSHOW FIELDS FROM `microposts`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mMicropost Create (0.2ms)[0m   [0;1mINSERT INTO `microposts` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-07-19 22:37:55', '2010-07-19 22:37:55', 1, 'This is a freakin\' test.')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/microposts/1
+Completed in 21ms (DB: 15) | 302 Found [http://localhost/microposts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#show (for 127.0.0.1 at 2010-07-19 18:37:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMicropost Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `microposts`[0m
+  [4;35;1mMicropost Load (2.3ms)[0m   [0mSELECT * FROM `microposts` WHERE (`microposts`.`id` = 1) [0m
+Rendering template within layouts/microposts
+Rendering microposts/show
+Completed in 12ms (View: 4, DB: 5) | 200 OK [http://localhost/microposts/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#index (for 127.0.0.1 at 2010-07-19 18:37:57) [GET]
+  [4;36;1mMicropost Load (0.3ms)[0m   [0;1mSELECT * FROM `microposts` [0m
+Rendering template within layouts/microposts
+Rendering microposts/index
+  [4;35;1mMicropost Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
+Completed in 12ms (View: 6, DB: 3) | 200 OK [http://localhost/microposts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-19 18:38:25) [GET]
+
+ActionController::RoutingError (No route matches "/app/models/micropost.rb" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#index (for 127.0.0.1 at 2010-07-19 18:48:21) [GET]
+  [4;36;1mMicropost Load (0.3ms)[0m   [0;1mSELECT * FROM `microposts` [0m
+Rendering template within layouts/microposts
+Rendering microposts/index
+  [4;35;1mMicropost Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
+Completed in 9ms (View: 4, DB: 2) | 200 OK [http://localhost/microposts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#new (for 127.0.0.1 at 2010-07-19 18:48:23) [GET]
+  [4;36;1mMicropost Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `microposts`[0m
+Rendering template within layouts/microposts
+Rendering microposts/new
+Completed in 47ms (View: 42, DB: 2) | 200 OK [http://localhost/microposts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MicropostsController#create (for 127.0.0.1 at 2010-07-19 18:48:32) [POST]
+  Parameters: {"commit"=>"Create", "micropost"=>{"user_id"=>"1", "content"=>"sdf,sdjgsdjgsdklfjsdklgjsdklgjsdklgjdklghsdjkfgh;dfgjkdsfjkghdsfgjkhds;kgdgjkhdsjkshdjkbnkjdfsghsjkhjkffjdvndfkhad;lfjgadfl;djkhsfdkl;fajsklgjdsjklhfjklsnsdkl;geklbdjhs;d"}, "authenticity_token"=>"Tqatr0Xor97ZVVZJBePRlGd3c7FFoILtPgkzdpYeTjk="}
+  [4;35;1mMicropost Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
+  [4;36;1mSQL (42.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/microposts
+Rendering microposts/new
+Completed in 60ms (View: 10, DB: 45) | 200 OK [http://localhost/microposts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mMicropost Load (0.4ms)[0m   [0;1mSELECT * FROM `microposts` WHERE (`microposts`.user_id = 1) [0m
+  [4;35;1mMicropost Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
