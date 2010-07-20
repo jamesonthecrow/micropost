@@ -225,3 +225,18 @@ Completed in 60ms (View: 10, DB: 45) | 200 OK [http://localhost/microposts]
   [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mMicropost Load (0.4ms)[0m   [0;1mSELECT * FROM `microposts` WHERE (`microposts`.user_id = 1) [0m
   [4;35;1mMicropost Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `microposts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-07-19 20:12:40) [GET]
+  [4;36;1mSQL (8.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 95ms (View: 2, DB: 9) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2010-07-19 20:17:03) [GET]
+Rendering pages/home
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/home]
